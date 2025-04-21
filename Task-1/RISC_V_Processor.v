@@ -1,10 +1,10 @@
-`timescale 1ns / 1ps
+//`timescale 1ns / 1ps
 
 module RISC_V_Processor(
-    clk,reset, elem1,elem2,elem3,elem4,elem5,elem6,elem7);
+    clk,reset, elem1,elem2,elem3);
     
 input clk,reset;
-output wire[63:0] elem1,elem2,elem3, elem4,elem5,elem6,elem7;
+output wire[63:0] elem1,elem2,elem3;
 wire [63:0] PC_to_IM;
 wire [31:0] IM_to_parse;
 wire [6:0] opcode_out; 
@@ -53,7 +53,7 @@ ALU_Control ac1(ALUOp_out,funct_in,ALU_C_Operation);
 
 MUX alum(imm_data_out,ReadData2_out,ALUSrc_out,alu_mux_out);
 
-Data_Memory DM (alu_result_out,ReadData2_out,clk,MemWrite_out,MemRead_out,DM_Read_Data_out,elem1,elem2,elem3,elem4,elem5,elem6,elem7);
+Data_Memory DM (alu_result_out,ReadData2_out,clk,MemWrite_out,MemRead_out,DM_Read_Data_out,elem1,elem2,elem3);
 
 MUX m2 (DM_Read_Data_out,alu_result_out,MemtoReg_out,mux_to_reg);
 
