@@ -6,11 +6,7 @@ module Data_Memory
     output [63:0] Read_Data,
     output [63:0] element1,
     output [63:0] element2,
-    output [63:0] element3,
-    output [63:0] element4,
-    output [63:0] element5,
-    output [63:0] element6,
-    output [63:0] element7
+    output [63:0] element3
 );
 
 reg [7:0] memory [63:0];
@@ -18,14 +14,9 @@ reg [63:0] temp_data;
 integer i;
 //since we are only concerned with the array values initialised in our code we'll only assign them
 //here to element and we've assumed size to be of 8 bits
-        assign element1 = memory[4]; //24
+        assign element1 = memory[20]; //24
         assign element2 = memory[12]; //48
-        assign element3 = memory[20]; //2
-        assign element4 = memory[28]; //24
-        assign element5 = memory[36]; //48
-        assign element6 = memory[44]; //2
-        assign element7 = memory[52]; //2
-
+        assign element3 = memory[4]; //2
         
 
 initial begin
